@@ -1,0 +1,33 @@
+<div class="article-page">
+  <div class="banner">
+    <div class="container">
+      <h1>How to build webapps that scale</h1>
+
+      <div class="article-meta">
+        <button class="btn btn-sm btn-outline-secondary">
+          <%= link_to "Edit Article", edit_path(@article.id)%>
+        </button>
+        <button class="btn btn-sm btn-outline-danger">
+          <%= link_to "Delete Article", article_path(@article), data: { turbo_method: "delete" } %>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container page">
+    <div class="row article-content">
+      <div class="col-md-12">
+        <p>
+          <%= @article.title%>
+        </p>
+        <h2 id="introducing-ionic"><%= @article.about%></h2>
+        <p><%= @article.content%></p>
+        <ul class="tag-list">
+          <li class="tag-default tag-pill tag-outline"><%= @article.tag%></li>
+        </ul>
+      </div>
+    </div>
+
+    <hr />
+  </div>
+</div>
