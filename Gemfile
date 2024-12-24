@@ -49,6 +49,14 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+
+  # Github: https://github.com/thoughtbot/factory_bot
+  gem 'factory_bot_rails' # FactoryBotのgem
+
+  # Github: https://github.com/rspec/rspec-rails
+  gem 'rspec-rails' # RSpecのgem
 end
 
 group :development do
@@ -60,4 +68,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem "rspec-rails"
+  gem "bcrypt"
 end
