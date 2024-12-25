@@ -5,8 +5,9 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+
     if @user.save
-      redirect_to root_path, notice: "登録されました！"
+      redirect_to root_path, notice: "#{user.name}が登録されました！"
     else
       render :new
     end
