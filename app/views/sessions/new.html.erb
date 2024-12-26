@@ -11,7 +11,7 @@
           <li>That email is already taken</li>
         </ul>
 
-         <%= form_with url:signin_path, local: true do |form|%>
+         <%= form_with url:signin_path, scope: :session, local: true do |form|%>
           <fieldset class="form-group">
             <%= form.text_field :email, class: "form-control form-control-lg", type: "text", placeholder: "Email" %>
           </fieldset>

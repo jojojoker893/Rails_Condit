@@ -7,9 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to root_path, notice: "#{user.name}が登録されました！"
+      redirect_to root_path, notice: "登録されました！"
     else
-      render :new
+      Rails.logger.info(@user.errors.full_messages) # エラー内容をログに出力
+      render :new, status: :unprocessable_entity
     end
   end
 
