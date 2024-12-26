@@ -23,5 +23,14 @@ module Condit
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.assets false
+      g.skip_routes false
+      g.test_framework :rspec,
+        controller_specs: false, # コントローラのspecファイルは生成しない
+        view_specs: false, # ビューのspecファイルは生成しない
+        helper_specs: false, # ヘルパーのspecファイルは生成しない
+        routing_specs: false # ルーティングのspecファイルは生成しない
+    end
   end
 end
